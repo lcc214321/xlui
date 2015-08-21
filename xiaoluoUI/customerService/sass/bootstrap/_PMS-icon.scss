@@ -1,0 +1,31 @@
+//icons
+
+
+
+.icon{
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  padding: 0;
+  margin: 0;
+  min-height: 30px;
+  min-width: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  & .btn{
+    padding: 0 20px;
+    line-height: 28px;
+  }
+}
+.icon-search{
+
+  background-image:  url(../../../img/iconfont-search.png);
+}
+.icon-message{
+  background-image:  url(../../../img/iconfont-message.png);
+}
+.icon-calculate{
+  background-image:  url(../../../img/iconfont-calculate.png);
+}

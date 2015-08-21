@@ -1,0 +1,39 @@
+span small,span .small{
+    color: #999999;
+}
+.text-gray{
+    color: #595959;
+}
+.p20{
+    padding: 20px;
+}
+.table-wrapper{
+    border: 1px #eee solid;
+}
+.colorBlock{
+    display: inline-block;
+    padding: 10px;
+    color: #FFF;
+}
+.w55{
+    width: 55px;
+}
+.input-row{
+    display: inline-block;
+}
+.form-group>div>span{
+    margin-top: 7px;
+    display: inline-block;
+}
+.tools .breadcrumb{
+    display: inline-block;
+    background-color: inherit;
+}
+a.btn{
+    position: relative;
+}
+a.btn .badge{
+    position: absolute;
+    top: 0;
+    right: 10px;
+}

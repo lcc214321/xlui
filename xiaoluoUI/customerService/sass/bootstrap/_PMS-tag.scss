@@ -1,0 +1,67 @@
+
+.tag{
+  display: inline-block;
+  padding: 0 25px;
+  line-height: 50px;
+}
+.tag-lightGrey {
+  background-color: $custom-lightGrey;
+  color: #FFFFFF;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: lighten($custom-lightGrey, 5%);
+  }
+  & .badge{
+    background-color: #FFFFFF;
+    color: $custom-lightGrey;
+  }
+}
+.tag-default {
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $border-color;
+  }
+  & .badge{
+    background-color: #FFFFFF;
+    color: $custom-lightGrey;
+  }
+}
+.tag-primary {
+  background-color: $brand-primary;
+  color: #FFFFFF;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: lighten($brand-primary, 5%);
+  }
+  & .badge{
+    background-color: #FFFFFF;
+    color: $brand-primary;
+  }
+}
+.tag-group{
+  overflow: hidden;
+}
+.tag-group .active{
+  background-color: $brand-primary;
+  color: #FFFFFF;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: lighten($brand-primary, 5%);
+  }
+  & .badge{
+    background-color: #FFFFFF;
+    color: $brand-primary;
+  }
+}
+.tag-group .tag{
+  border-right: 1px solid $border-color;
+  float: left;
+}
+ul.tag-group{
+  margin: 0;
+  padding: 0;
+}
