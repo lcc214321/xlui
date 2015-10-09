@@ -1,0 +1,25 @@
+.card-box{
+  overflow: hidden;
+  .card{
+    width: 25%;
+    min-width: 290px;
+    max-width: 330px;
+    height: 181px;
+    overflow: auto;
+    padding: 10px;
+    display: inline-block;
+    float: left;
+    border: 1px $border-color solid;
+    border-radius: $border-radius-base;
+    background-color: #FFFFFF;
+    .card-title{ font-weight: bold;}
+    .card-body{ padding: 10px}
+    .card-footer{
+      text-align: right;
+
+      & .btn{
+
+      }
+    }
+  }
+}

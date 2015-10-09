@@ -1,0 +1,126 @@
+//
+// boxs
+// --------------------------------------------------
+
+// .box-open      - body class for killing the scroll
+// .box           - container to scroll within
+// .box-dialog    - positioning shell for the actual box
+// .box-content   - actual box w/ bg and corners and shit
+
+
+// Container that the box scrolls within
+.box {
+  margin-bottom: 20px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  border: 1px $border-color solid;
+  border-radius: $border-radius-base;
+  background-color: #FFFFFF;
+  //@include box-shadow(0 1px 1px rgba(0,0,0,.125));
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+}
+
+
+// Actual box
+.box-content {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid $border-color; //old browsers fallback (ie8 etc)
+  border-radius: $border-radius-base;
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  background-clip: padding-box;
+  // Remove focus outline from opened box
+  outline: 0;
+}
+
+// box header
+// Top section of the box w/ title and dismiss
+.box-header {
+  border-bottom: 1px solid $border-color;
+  min-height: ($modal-title-padding + $modal-title-line-height);
+  & h4{
+    padding-left: 20px;
+    display: inline-block;
+  }
+  & .btn-xs{
+    margin: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  & .btn-sm{
+    margin: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+// Close icon
+.box-header .close {
+  margin-top: -2px;
+}
+
+// Title text within header
+.box-title {
+  margin: 0;
+  line-height: $modal-title-line-height;
+}
+
+// box body
+// Where all box content resides (sibling of .box-header and .box-footer)
+.box-body {
+  position: relative;
+  padding: $modal-inner-padding;
+}
+
+// Footer (for actions)
+.box-footer {
+  padding: $modal-inner-padding;
+  margin-left: -5px;
+  //text-align: right; // right align buttons
+  //border-top: 1px solid $border-color;
+  @include clearfix; // clear it in case folks use .pull-* classes on buttons
+
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+// Measure scrollbar width for padding body during box show/hide
+.box-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+// Scale up the box
+@media (min-width: $screen-sm-min) {
+  // Automatically set box's width for larger viewports
+  .box-dialog {
+    width: $modal-md;
+    margin: 30px auto;
+  }
+  .box-content {
+    @include box-shadow(0 5px 5px rgba(0,0,0,.5));
+  }
+
+  // box sizes
+  .box-sm { width: $modal-sm; }
+}
+
+@media (min-width: $screen-md-min) {
+  .box-lg { width: $modal-lg; }
+}
+
